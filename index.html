@@ -3,100 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machine Learning Concepts</title>
+    <title>Machine Learning Detailed Answers</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
             margin: 20px;
+            padding: 20px;
             background-color: #f4f4f4;
-            color: #333;
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
             background: white;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+            border-radius: 10px;
         }
-        h1, h2 {
-            color: #222;
+        h1, h2, h3 {
+            color: #333;
         }
         h1 {
             text-align: center;
-            background: #007BFF;
+        }
+        p {
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        .question {
+            background: #007bff;
             color: white;
             padding: 10px;
             border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
         }
-        h2 {
-            border-bottom: 2px solid #007BFF;
-            padding-bottom: 5px;
-        }
-        .question {
+        .answer {
+            padding: 15px;
+            background: #e9ecef;
+            border-left: 5px solid #007bff;
             margin-bottom: 20px;
         }
-        .highlight {
-            background: #eef;
-            padding: 5px;
-            border-left: 5px solid #007BFF;
+        .code {
+            background: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        .example {
+            background: #d1ecf1;
+            color: #0c5460;
+            padding: 10px;
+            border-left: 5px solid #17a2b8;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Machine Learning Concepts</h1>
+        <h1>Machine Learning Detailed Answers (16 Marks)</h1>
         
-        <div class="question">
-            <h2>Q. 1 a) Supervised, Unsupervised aur Reinforcement Learning ka Difference aur Example</h2>
-            <p><strong>Supervised Learning:</strong> Labeled dataset hota hai. Example: <span class="highlight">Email Spam Detection</span></p>
-            <p><strong>Unsupervised Learning:</strong> Labels nahi hote. Example: <span class="highlight">Customer Segmentation</span></p>
-            <p><strong>Reinforcement Learning:</strong> Agent environment me actions leta hai. Example: <span class="highlight">Chess-playing AI</span></p>
+        <div class="question">Q.2 (a) Statistical Tests to Compare Classifiers</div>
+        <div class="answer">
+            <p>When multiple classifiers are evaluated, statistical tests are essential to determine which model is significantly better.</p>
+            <h3>Common Statistical Tests:</h3>
+            <ul>
+                <li><strong>T-Test:</strong> Checks whether the mean accuracy of two classifiers is significantly different.</li>
+                <li><strong>Wilcoxon Signed-Rank Test:</strong> A non-parametric test used when data distribution is unknown.</li>
+                <li><strong>McNemar’s Test:</strong> Best for paired classification tasks in binary classification problems.</li>
+                <li><strong>ANOVA (Analysis of Variance):</strong> Used for comparing multiple classifiers over multiple datasets.</li>
+            </ul>
+            <h3>Example Calculation:</h3>
+            <p>Assume SVM and Decision Tree classifiers have accuracy scores of 89% and 85% over 10 datasets. A T-Test determines if this difference is statistically significant.</p>
         </div>
 
-        <div class="question">
-            <h2>Q. 1 b) Empirical Error ka Significance in Machine Learning</h2>
-            <p>Empirical error training dataset par model ka error hota hai. <br>Example: 100 images classify ki, 20 galat → Error = <span class="highlight">20%</span></p>
+        <div class="question">Q.2 (b) PAC Learning and VC Dimension</div>
+        <div class="answer">
+            <h3>PAC Learning (Probably Approximately Correct Learning)</h3>
+            <p>PAC learning formalizes the idea that a machine learning algorithm can learn a function with high probability given sufficient training data.</p>
+            <h3>Mathematical Representation:</h3>
+            <div class="code"> P(error ≤ ε) ≥ 1 - δ </div>
+            <p>Where:</p>
+            <ul>
+                <li>ε is the maximum error threshold.</li>
+                <li>δ represents the confidence level.</li>
+            </ul>
+            <h3>VC Dimension (Vapnik-Chervonenkis Dimension)</h3>
+            <p>VC dimension measures the complexity of a hypothesis class by the largest set of points it can shatter (correctly classify in all possible ways).</p>
+            <h3>Example:</h3>
+            <p>A perceptron in 2D space has a VC dimension of 3, meaning it can classify any three non-collinear points correctly.</p>
         </div>
 
-        <div class="question">
-            <h2>Q. 2 a) Classifiers Compare Karne Ke Liye Statistical Tests</h2>
-            <p><strong>T-test:</strong> Do classifiers ke accuracy compare karta hai.</p>
-            <p><strong>Wilcoxon Signed-Rank Test:</strong> Small datasets ke liye.</p>
-            <p><strong>McNemar’s Test:</strong> Binary classification me.</p>
-            <p><strong>ANOVA:</strong> Multiple classifiers ke comparison me.</p>
+        <div class="question">Q.3 (a) Importance of K-Fold Cross Validation</div>
+        <div class="answer">
+            <p>K-Fold Cross Validation improves model performance estimation by reducing bias and variance.</p>
+            <h3>Steps:</h3>
+            <ol>
+                <li>Split dataset into K subsets.</li>
+                <li>Train model K times, using K-1 parts for training and 1 part for testing.</li>
+                <li>Average the results to get a more reliable performance measure.</li>
+            </ol>
+            <h3>Example:</h3>
+            <p>In 10-Fold CV, the dataset is divided into 10 equal parts, each used as a test set once.</p>
         </div>
 
-        <div class="question">
-            <h2>Q. 2 b) PAC Learning aur VC Dimension ki Importance</h2>
-            <p><strong>PAC Learning:</strong> Learning efficiency define karta hai.</p>
-            <p><strong>VC Dimension:</strong> Classifier ki complexity define karta hai.</p>
+        <div class="question">Q.4 (a) Support Vector Machine (SVM) Algorithm</div>
+        <div class="answer">
+            <p>SVM finds the optimal hyperplane that separates data points while maximizing the margin between classes.</p>
+            <h3>Mathematical Representation:</h3>
+            <div class="code"> maximize (2 / ||w||) </div>
+            <p>SVM can also use kernel tricks to map non-linearly separable data into a higher-dimensional space where it becomes linearly separable.</p>
+            <h3>Example:</h3>
+            <p>SVM is widely used in text classification, such as spam detection.</p>
         </div>
 
-        <div class="question">
-            <h2>Q. 3 a) K-Fold Cross Validation ka Importance</h2>
-            <p>Dataset ko <span class="highlight">K parts</span> me divide kar ke har part ko alag-alag train-test set banaya jata hai.</p>
+        <div class="question">Q.4 (b) Backpropagation Algorithm for Multilayer Perceptron</div>
+        <div class="answer">
+            <p>Backpropagation is a key algorithm in training neural networks by minimizing the error using gradient descent.</p>
+            <h3>Steps:</h3>
+            <ol>
+                <li>Perform forward pass to compute predictions.</li>
+                <li>Calculate error (difference between actual and predicted output).</li>
+                <li>Backpropagate the error using partial derivatives.</li>
+                <li>Update weights iteratively until the error is minimized.</li>
+            </ol>
+            <h3>Formula:</h3>
+            <div class="code"> w = w - η * (∂L/∂w) </div>
         </div>
 
-        <div class="question">
-            <h2>Q. 4 a) Support Vector Machine (SVM) Algorithm</h2>
-            <p>Best hyperplane choose karta hai jo maximum margin maintain kare.</p>
-        </div>
-
-        <div class="question">
-            <h2>Q. 4 b) Backpropagation Algorithm for Multilayer Perceptron</h2>
-            <p>Gradient Descent aur Chain Rule ka use karke weights update hote hain.</p>
-        </div>
-
-        <div class="question">
-            <h2>Q. 5 a) XOR Gate Problem Cannot Be Solved Using Perceptron (True or False?)</h2>
-            <p><strong>✅ True!</strong> Kyunki XOR problem linearly separable nahi hai.</p>
-        </div>
-
-        <div class="question">
-            <h2>Q. 5 b) Curse of Dimensionality in Machine Learning</h2>
-            <p>Jab dimensions badhte hain, to data sparse ho jata hai aur distance unreliable ho jati hai.</p>
+        <div class="question">Q.5 (b) Curse of Dimensionality</div>
+        <div class="answer">
+            <p>As the number of dimensions increases, data points become sparse, making it harder for models to generalize.</p>
+            <h3>Problems Caused:</h3>
+            <ul>
+                <li>Increased computational cost.</li>
+                <li>Higher risk of overfitting.</li>
+                <li>Data visualization becomes challenging.</li>
+            </ul>
+            <h3>Example:</h3>
+            <p>A dataset with 100 dimensions makes clustering harder as data points appear more distant.</p>
         </div>
     </div>
 </body>
