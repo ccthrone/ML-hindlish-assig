@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Concepts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #222;
+        }
+        h1 {
+            text-align: center;
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        h2 {
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .highlight {
+            background: #eef;
+            padding: 5px;
+            border-left: 5px solid #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Machine Learning Concepts</h1>
+        
+        <div class="question">
+            <h2>Q. 1 a) Supervised, Unsupervised aur Reinforcement Learning ka Difference aur Example</h2>
+            <p><strong>Supervised Learning:</strong> Labeled dataset hota hai. Example: <span class="highlight">Email Spam Detection</span></p>
+            <p><strong>Unsupervised Learning:</strong> Labels nahi hote. Example: <span class="highlight">Customer Segmentation</span></p>
+            <p><strong>Reinforcement Learning:</strong> Agent environment me actions leta hai. Example: <span class="highlight">Chess-playing AI</span></p>
+        </div>
+
+        <div class="question">
+            <h2>Q. 1 b) Empirical Error ka Significance in Machine Learning</h2>
+            <p>Empirical error training dataset par model ka error hota hai. <br>Example: 100 images classify ki, 20 galat → Error = <span class="highlight">20%</span></p>
+        </div>
+
+        <div class="question">
+            <h2>Q. 2 a) Classifiers Compare Karne Ke Liye Statistical Tests</h2>
+            <p><strong>T-test:</strong> Do classifiers ke accuracy compare karta hai.</p>
+            <p><strong>Wilcoxon Signed-Rank Test:</strong> Small datasets ke liye.</p>
+            <p><strong>McNemar’s Test:</strong> Binary classification me.</p>
+            <p><strong>ANOVA:</strong> Multiple classifiers ke comparison me.</p>
+        </div>
+
+        <div class="question">
+            <h2>Q. 2 b) PAC Learning aur VC Dimension ki Importance</h2>
+            <p><strong>PAC Learning:</strong> Learning efficiency define karta hai.</p>
+            <p><strong>VC Dimension:</strong> Classifier ki complexity define karta hai.</p>
+        </div>
+
+        <div class="question">
+            <h2>Q. 3 a) K-Fold Cross Validation ka Importance</h2>
+            <p>Dataset ko <span class="highlight">K parts</span> me divide kar ke har part ko alag-alag train-test set banaya jata hai.</p>
+        </div>
+
+        <div class="question">
+            <h2>Q. 4 a) Support Vector Machine (SVM) Algorithm</h2>
+            <p>Best hyperplane choose karta hai jo maximum margin maintain kare.</p>
+        </div>
+
+        <div class="question">
+            <h2>Q. 4 b) Backpropagation Algorithm for Multilayer Perceptron</h2>
+            <p>Gradient Descent aur Chain Rule ka use karke weights update hote hain.</p>
+        </div>
+
+        <div class="question">
+            <h2>Q. 5 a) XOR Gate Problem Cannot Be Solved Using Perceptron (True or False?)</h2>
+            <p><strong>✅ True!</strong> Kyunki XOR problem linearly separable nahi hai.</p>
+        </div>
+
+        <div class="question">
+            <h2>Q. 5 b) Curse of Dimensionality in Machine Learning</h2>
+            <p>Jab dimensions badhte hain, to data sparse ho jata hai aur distance unreliable ho jati hai.</p>
+        </div>
+    </div>
+</body>
+</html>
